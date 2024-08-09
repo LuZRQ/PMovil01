@@ -61,7 +61,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun estadoOnclick() {
         btnCalcular.setOnClickListener {
-            // Obtener el nombre y el precio ingresado por el usuario
             val nombreProducto = textNombre.text.toString()
             val precioProducto = txtPrecio.text.toString().toDoubleOrNull()
 
@@ -70,11 +69,9 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Crear la instancia de Productos con los datos proporcionados por el usuario
             val laptop = Productos(nombreProducto, precioProducto)
 
-            // Aquí, laptop.nombre ya contiene el valor que ingresó el usuario
-            // No necesitas asignarle un nuevo valor
+
             val iva: Double
 
             when (spLista.selectedItem?.toString()) {
@@ -87,14 +84,12 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            // Añadir el resultado a la lista
             productoList.add("${laptop.nombre}, $precioProducto, IVA: $iva")
             adapterlistView.notifyDataSetChanged()
         }
     }
     fun cargarListaproducto(){
 
-        // val productos= arrayOf("LAPTOP", "MOUSE")
         productoList = mutableListOf("3500")
         adapterlistView= ArrayAdapter(this, android.R.layout.simple_list_item_1,productoList)
         listpro.adapter = adapterlistView
