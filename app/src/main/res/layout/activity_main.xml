@@ -27,31 +27,53 @@
             android:text="Calcular IVA de producto"
             android:textSize="25dp" />
 
-        <EditText
-            android:id="@+id/txtNombre"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text" />
+            android:hint="NOMBRE DE PRODUCTO"
+            app:helperText="Ingrese el nombre del producto">
 
-        <EditText
-            android:id="@+id/txtProducto"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textPrecio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:hint="PRECIO DE PRODUCTO"
-            android:inputType="text" />
+            app:helperText="Ingrese el precio del producto">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="LIsta de Paises:" />
-
-        <Spinner
-            android:id="@+id/spPaises"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textPaises"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="Seleccionar País">
+
+            <Spinner
+                android:id="@+id/spPaises"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:backgroundTint="?attr/colorControlHighlight"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
             android:id="@+id/btnCalcularIVA"
