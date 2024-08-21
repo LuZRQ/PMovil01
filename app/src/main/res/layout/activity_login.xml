@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color1"
     tools:context=".Login">
 
     <TextView
@@ -23,8 +24,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="408dp"
+        android:layout_height="254dp"
         android:layout_marginTop="25dp"
         android:orientation="vertical"
         android:padding="15dp"
@@ -66,7 +67,9 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="INICIO" />
+            android:background="@drawable/btn"
+            android:text="INICIO"
+            app:backgroundTint="@null" />
 
     </LinearLayout>
 

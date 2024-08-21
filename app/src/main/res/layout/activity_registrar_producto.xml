@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightGray"
     tools:context=".registrarProducto">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color1"
         android:orientation="vertical"
         android:padding="16dp"
         tools:context=".RegistrarProductoActivity">
@@ -33,7 +33,6 @@
             android:id="@+id/textFieldNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/color1"
             android:hint="Nombre del Producto"
             app:helperText="Ingrese el nombre del producto">
 
@@ -108,7 +107,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Registrar Producto" />
+            android:background="@drawable/btn"
+            android:text="Registrar Producto"
+            app:backgroundTint="@null"/>
     </LinearLayout>
 
 

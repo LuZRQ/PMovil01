@@ -79,7 +79,10 @@
             android:id="@+id/btnCalcularIVA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Calcular" />
+            android:background="@drawable/btn"
+            android:text="Calcular"
+            app:backgroundTint="@null"
+            />
 
         <TextView
             android:id="@+id/tvResultado"
