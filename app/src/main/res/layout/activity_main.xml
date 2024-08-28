@@ -54,6 +54,16 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+
+            android:text="Buscar Producto"
+            app:backgroundTint="@null"/>
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
@@ -76,7 +86,7 @@
 
 
         <Button
-            android:id="@+id/btnCalcularIVA"
+            android:id="@+id/btnCalcular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/btn"

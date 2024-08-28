@@ -12,10 +12,11 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.class02.db.AdminSQLiteOpenHelper
 
 class registrarProducto : AppCompatActivity() {
-    lateinit var  txtNomOro: EditText;
-    lateinit var txtPrePro: EditText;
-    lateinit var  btnRegis: Button;
-    lateinit var txtCodigoPro: EditText
+    lateinit var btnRegistroPro:Button
+    lateinit var txtNom:EditText
+    lateinit var txtPrecio:EditText
+    lateinit var txtCodigo:EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,32 +26,35 @@ class registrarProducto : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        cargarR()
-        estadoBopton()
-    }
-    fun cargarR(){
-        txtNomOro=findViewById(R.id.txtCodigoProducto)
-        txtPrePro=findViewById(R.id.txtPrecioPro)
-        txtCodigoPro=findViewById(R.id.txtCodigoProducto)
-        btnRegis=findViewById(R.id.btnRegistrarProducto)
 
+        cargarR()
+        estadoBoton()
     }
-    fun estadoBopton(){
-        btnRegis.setOnClickListener{
-            val adminSQL= AdminSQLiteOpenHelper(this,"administracion",null,1)
-            val db=adminSQL.writableDatabase
-            val registro= ContentValues()
-            registro.put("id_productos",txtNomOro.text.toString())
-            registro.put("nombre",txtNomOro.text.toString())
-            registro.put("precio",txtPrePro.text.toString())
-            db.insert("productos",null,registro)
-            txtCodigoPro.setText("")
-            txtNomOro.setText("")
-            txtPrePro.setText("")
-            Toast.makeText(this, "Se cargaron los datos del artículo", Toast.LENGTH_SHORT).show()
+
+    fun cargarR(){
+        btnRegistroPro=findViewById(R.id.btnRegistroProducto)
+        txtNom = findViewById(R.id.txtNombre)
+        txtPrecio = findViewById(R.id.txtPrecio)
+        txtCodigo = findViewById(R.id.txtCodigoProducto)
+    }
+
+    fun estadoBoton(){
+        btnRegistroPro.setOnClickListener{
+
+            val adminsql = AdminSQLiteOpenHelper(this,"administracion",null,1)
+            val db = adminsql.writableDatabase
+            val registro = ContentValues()
+
+            registro.put("id_productos", txtCodigo.text.toString())
+            registro.put("nombre", txtNom.text.toString())
+            registro.put("precio", txtPrecio.text.toString())
+            db.insert("prodcutos", null, registro)
+            db.close()
+            txtCodigo.setText("")
+            txtNom.setText("")
+            txtPrecio.setText("")
+            Toast.makeText(this, "Se cargaron los datos del producto", Toast.LENGTH_SHORT).show()
 
         }
-
-
     }
 }

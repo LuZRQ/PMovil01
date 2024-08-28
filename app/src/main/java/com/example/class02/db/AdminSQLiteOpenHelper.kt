@@ -13,14 +13,23 @@ class AdminSQLiteOpenHelper(
     version: Int
 ) : SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase?) {
-        TODO("Not yet implemented")
-        db?.execSQL("create table productos(id_productos int primary key, nombre text, precio real)")
+        db?.execSQL(
+            "CREATE TABLE productos (" +
+                    "id_productos INTEGER PRIMARY KEY, " +
+                    "nombre TEXT, " +
+                    "precio REAL)"
+        )
+
+        /*val createTableQuery = "CREATE TABLE productos (" +
+                "id_producto INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "nombre TEXT NOT NULL," +
+                "precio REAL NOT NULL)"
+        db?.execSQL(createTableQuery)*/
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
-        if (oldVersion < 2) {
-            db?.execSQL("ALTER TABLE productos ADD COLUMN descripcion TEXT")
-        }
+        // Aquí podrías manejar las actualizaciones de la base de datos.
+        db?.execSQL("DROP TABLE IF EXISTS productos")
+        onCreate(db)
     }
-}
+    }
