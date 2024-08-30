@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.class02.db.AdminSQLiteOpenHelper
+import com.example.class02.model.Productos
 
 class registrarProducto : AppCompatActivity() {
     lateinit var btnRegistroPro:Button
@@ -44,10 +45,12 @@ class registrarProducto : AppCompatActivity() {
             val adminsql = AdminSQLiteOpenHelper(this,"administracion",null,1)
             val db = adminsql.writableDatabase
             val registro = ContentValues()
-
+//realizamos la instancia del objeto
+            //el objeto crasea a que solo entre numeros y no  string, arreglar
+            val objeto= Productos(txtNom.text.toString(),txtPrecio.text.toString().toDouble())
             registro.put("id_productos", txtCodigo.text.toString())
-            registro.put("nombre", txtNom.text.toString())
-            registro.put("precio", txtPrecio.text.toString())
+            registro.put("nombre", objeto.getNombre())
+            registro.put("precio", objeto.getPrecio())
             db.insert("productos", null, registro)
 
             db.close()

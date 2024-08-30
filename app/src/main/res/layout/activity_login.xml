@@ -13,8 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
-        android:fontFamily="casual"
+        android:fontFamily="@font/bigshot_one"
         android:text="Inicio de sesion"
+        android:textColor="@color/color6"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,8 +25,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="408dp"
-        android:layout_height="254dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:orientation="vertical"
         android:padding="15dp"
@@ -44,7 +45,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordes"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,7 +61,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordes"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,8 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/btn"
-            android:textColor="@color/black"
             android:text="INICIO"
+            android:textColor="@color/black"
             app:backgroundTint="@null" />
 
     </LinearLayout>

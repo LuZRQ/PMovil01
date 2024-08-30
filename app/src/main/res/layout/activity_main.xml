@@ -23,7 +23,8 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/bigshot_one"
+            android:textColor="@color/color6"
             android:text="Calcular el IVA de un producto"
             android:textSize="20dp" />
 
@@ -31,13 +32,15 @@
             android:id="@+id/textField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Usuario"
-            app:helperText="Ingrese Usuario">
+            android:hint="Nombre de Producto"
+            app:helperText="Ingrese Nombre de Producto">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtNombre"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordes"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -47,13 +50,15 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Usuario"
-            app:helperText="Ingrese Usuario">
+            android:hint="Precio de Producto"
+            app:helperText="Ingrese Precio de Producto">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtPrecio"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordes"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 

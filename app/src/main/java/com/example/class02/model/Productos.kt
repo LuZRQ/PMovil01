@@ -2,20 +2,28 @@ package com.example.class02.model
 
 class Productos  constructor(nombre:String, precio:Double) {
 
-    var nombre: String = nombre
-        get() = field
-        set(value) {
-            field = value
+   private var nombre:String = nombre
+   private var precio:Double = precio
+//get
+    fun getNombre():String{
+        return nombre
+    }
+    fun getPrecio():Double{
+        return precio
+    }
 
-        }
+    //set
+    fun setNombre(nombre:String){
+       this.nombre= nombre
 
-    var precio: Double = precio
-        get() = field
-        set(value) {
-            field = value
-        }
+    }
+    fun setPrecio(precio:Double){
+        this.precio= precio
+    }
 
-    fun calIVA(iva: Double): Double {
-        return precio * iva
+
+    fun calIVA(iva:Double): Double{
+        val total:Double =precio * iva
+        return total
     }
 }
