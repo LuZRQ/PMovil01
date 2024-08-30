@@ -9,66 +9,70 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="1dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
-            android:text="Calcular IVA de producto"
-            android:textSize="25dp" />
+            android:text="Calcular el IVA de un producto"
+            android:textSize="20dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textNombre"
+            android:id="@+id/textField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="NOMBRE DE PRODUCTO"
-            app:helperText="Ingrese el nombre del producto">
+            android:hint="Usuario"
+            app:helperText="Ingrese Usuario">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtNombre"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:layout_height="wrap_content" />
+
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textPrecio"
+            android:id="@+id/textField2"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="PRECIO DE PRODUCTO"
-            app:helperText="Ingrese el precio del producto">
+            android:hint="Usuario"
+            app:helperText="Ingrese Usuario">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtProducto"
+                android:id="@+id/txtPrecio"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:layout_height="wrap_content" />
+
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
             android:id="@+id/btnBuscar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="BUSCAR PRODUCTO"
             android:background="@drawable/btn"
-
-            android:text="Buscar Producto"
+            android:textColor="@color/black"
             app:backgroundTint="@null"/>
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LIsta de Paises:" />
+            android:text="Seleccione El Pais a calcular el IVA:" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textPaises"
             android:layout_width="match_parent"
@@ -78,21 +82,21 @@
             <Spinner
                 android:id="@+id/spPaises"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
+                android:padding="8dp"
                 android:spinnerMode="dropdown"
-                android:backgroundTint="?attr/colorControlHighlight"
-                />
+            android:backgroundTint="?attr/colorControlHighlight"/>
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <Button
             android:id="@+id/btnCalcular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn"
+            android:backgroundTint="@color/black"
             android:text="Calcular"
-            app:backgroundTint="@null"
-            />
+            android:background="@drawable/btn"
+
+            app:backgroundTint="@null"/>
 
         <TextView
             android:id="@+id/tvResultado"
@@ -103,12 +107,11 @@
 
     <ListView
         android:id="@+id/listaProductos"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

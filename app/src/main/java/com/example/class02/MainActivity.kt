@@ -45,16 +45,15 @@ class MainActivity : AppCompatActivity() {
     estadoOnclick()
     cargarListaProducto()
 
-    //cargar lista de datos en spinner
-    val listaPaises = arrayOf("USA", "BOL", "ESP")
-    val adaptador1 = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listaPaises)
-    spLista.adapter = adaptador1
+        val listaPaises = arrayOf("USA", "BOL", "ESP")
+        val adaptador1 = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listaPaises)
+        spLista.adapter = adaptador1
 
 
 }
 fun cargarR (){
     btnCalcular = findViewById(R.id.btnCalcular)
-    txtPrecio = findViewById(R.id.txtProducto)
+    txtPrecio = findViewById(R.id.txtPrecio)
     tvResul = findViewById(R.id.tvResultado)
     spLista = findViewById(R.id.spPaises)
     listPro = findViewById(R.id.listaProductos)
@@ -77,25 +76,23 @@ fun estadoOnclick(){
 
     }
 
-    btnBuscar.setOnClickListener(){
+    //al biton buscar
+    btnBuscar.setOnClickListener{
         val admin = AdminSQLiteOpenHelper(this, "administracion", null, 1)
         val bd = admin.writableDatabase
-        val query ="select nombre,precio from productos where id_productos= ?"
-        val fila = bd.rawQuery(query, arrayOf(txtNombre.text))
+        val fila = bd.rawQuery("select nombre,precio from productos where id_productos=${txtNombre.text.toString()}", null)
         if (fila.moveToFirst()) {
             txtNombre.setText(fila.getString(0))
             txtPrecio.setText(fila.getString(1))
         } else
-            Toast.makeText(this, "No existe un artículo con dicho código",  Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "No existe un producto con dicho código",  Toast.LENGTH_SHORT).show()
         bd.close()
-
     }
+}
 
 
-    }
 
-
-fun cargarListaProducto(){
+    fun cargarListaProducto(){
     //val productos = arrayOf("LAPTOP", "MOUSE")
     productosList = mutableListOf("3500")
     adapterListView = ArrayAdapter(this, android.R.layout.simple_list_item_1,productosList)
