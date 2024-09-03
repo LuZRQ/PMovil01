@@ -47,8 +47,8 @@ class registrarProducto : AppCompatActivity() {
             val registro = ContentValues()
 //realizamos la instancia del objeto
             //el objeto crasea a que solo entre numeros y no  string, arreglar
-            val objeto= Productos(txtNom.text.toString(),txtPrecio.text.toString().toDouble())
-            registro.put("id_productos", txtCodigo.text.toString())
+            val objeto= Productos(txtNom.text.toString(),txtPrecio.text.toString().toDouble(), txtCodigo.text.toString().toInt())
+            registro.put("id_productos", objeto.getProductos())
             registro.put("nombre", objeto.getNombre())
             registro.put("precio", objeto.getPrecio())
             db.insert("productos", null, registro)
