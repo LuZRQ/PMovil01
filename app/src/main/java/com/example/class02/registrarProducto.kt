@@ -41,7 +41,7 @@ class registrarProducto : AppCompatActivity() {
 
     fun estadoBoton(){
         btnRegistroPro.setOnClickListener{
-
+/*
             val adminsql = AdminSQLiteOpenHelper(this,"administracion",null,1)
             val db = adminsql.writableDatabase
             val registro = ContentValues()
@@ -58,7 +58,36 @@ class registrarProducto : AppCompatActivity() {
             txtNom.setText("")
             txtPrecio.setText("")
             Toast.makeText(this, "Se cargaron los datos del producto", Toast.LENGTH_SHORT).show()
+            */
+            try {
+                val nombre = txtNom.text.toString()
+                val precio = txtPrecio.text.toString().toDouble()
+                val codigo = txtCodigo.text.toString().toInt()
 
+                val adminsql = AdminSQLiteOpenHelper(this, "administracion", null, 1)
+                val db = adminsql.writableDatabase
+                val registro = ContentValues()
+
+                // Realizamos la instancia del objeto
+                val objeto = Productos(nombre, precio, codigo)
+                registro.put("id_productos", objeto.getProductos())
+                registro.put("nombre", objeto.getNombre())
+                registro.put("precio", objeto.getPrecio())
+
+                db.insert("productos", null, registro)
+                db.close()
+
+                // Limpiamos los campos
+                txtCodigo.setText("")
+                txtNom.setText("")
+                txtPrecio.setText("")
+
+                Toast.makeText(this, "Se cargaron los datos del producto", Toast.LENGTH_SHORT).show()
+            } catch (e: NumberFormatException) {
+                // Mostramos un mensaje de error si se ingresan datos no válidos
+                Toast.makeText(this, "Por favor, ingrese un código y precio válidos", Toast.LENGTH_SHORT).show()
+            }
         }
     }
-}
+
+        }
