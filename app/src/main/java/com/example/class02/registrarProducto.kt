@@ -60,16 +60,14 @@ class registrarProducto : AppCompatActivity() {
             Toast.makeText(this, "Se cargaron los datos del producto", Toast.LENGTH_SHORT).show()
             */
             try {
-                val nombre = txtNom.text.toString()
-                val precio = txtPrecio.text.toString().toDouble()
-                val codigo = txtCodigo.text.toString().toInt()
+
 
                 val adminsql = AdminSQLiteOpenHelper(this, "administracion", null, 1)
                 val db = adminsql.writableDatabase
                 val registro = ContentValues()
 
                 // Realizamos la instancia del objeto
-                val objeto = Productos(nombre, precio, codigo)
+                val objeto= Productos(txtNom.text.toString(),txtPrecio.text.toString().toDouble(), txtCodigo.text.toString().toInt())
                 registro.put("id_productos", objeto.getProductos())
                 registro.put("nombre", objeto.getNombre())
                 registro.put("precio", objeto.getPrecio())
